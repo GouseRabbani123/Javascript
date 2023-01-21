@@ -1,0 +1,55 @@
+var x = 5;
+
+a();
+
+b();
+console.log(x);
+
+function a(){
+   var x  = 10;
+    
+}
+function b(){
+    var x = 100;
+    
+}
+
+
+// WHAT HAPPENS IN EXECUTION CONTEXT 👍
+// MOMORY:
+// 1.whenever javascript runs any prgream a globle exceution conext is created 
+// 2.it has 2 components memory and code 
+// 3.first we allocationg memory to "x,b,a"
+// 4.x will stores undefined 
+// 5.b points its function code from line 8 to 11
+// 6.a will poits its function code frrom line 4 to 7
+
+// CODE:
+// 1.STORES X VALUE AS 5
+// 2.CREATES ONE MORE EXECUTION CONTEXT CALLED AS FUCTION EXCUTION COTEXT for "b"
+// WHICH HAS ONE MORE MEMORY AND ONE MORE CODE 
+// 3.IN WHICH MEMORY "X" IS undefined and in code var x = 100;
+// 4.then from console.log(x) , js pushes the value of x into local memory space ("local memory space is the space which is very much li ited to that perticular execution context")
+// 5.from the local memory finds the x value as 100 and prints 100 in console
+// 6.CREATES ONE MORE EXECUTION CONTEXT CALLED AS FUCTION EXCUTION COTEXT for "a" => WHICH HAS ONE MORE MEMORY AND ONE MORE CODE 
+// 7.3.IN WHICH MEMORY "X" IS undefined and in code var x = 10;
+// 8.4.then from console.log(x) , js pushes the value of x into local memory space 
+// 9.from the local memory finds the x value as 10 and prints 10 in console
+
+
+
+
+// WHAT HAPPENS IN CALL STACK 
+// 1.FIRST ONE GLOBLE EXECUTION CONTEXT CREATED IN BOTTOM OF THE STACK
+// 2.EXECUTION CONTEXT OF B IS PASSES INTO THE CAL STACK 
+// 3.once print 100 this execution context is delete from calstack
+// 4.2.EXECUTION CONTEXT OF A IS PASSES INTO THE CAL STACK 
+// 5.3.once print 10 this execution context is delete from calstack
+// 6.finally after completion of whole code all the execution contexts get deleted and global execution context also deleted and then the cal stack reamins empty
+
+
+
+
+
+
+
